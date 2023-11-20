@@ -1,5 +1,3 @@
-# Create a dataframe having at least 3 columns and 50 rows to store numeric data generated using a random function. Replace 10% of the values by null values whose index positions are generated using random function. Do the following:
-
 import numpy as np
 import pandas as pd
 
@@ -69,3 +67,21 @@ covariance_23 = df['Column 2'].cov(df['Column 3'])
 # Displaying correlation and covariance
 print(f"Correlation between Column1 and Column2: {correlation_12}")
 print(f"Covariance between Column2 and Column3: {covariance_23}")
+
+
+#PART G
+# Detect the outliers and remove the rows having outliers.
+
+# Calculating z-scores for each column
+z_scores = (df - df.mean()) / df.std()
+
+# Identifying outliers (considering z-score threshold of 3)
+outliers =df[(z_scores > 0.25) | (z_scores < 0.25)].dropna(inplace=False)
+
+print("Outliers:")
+print(outliers)
+
+# PART H
+#Discretize second column and create 5 bins
+bins = [0.2,0.4,0.6,0.8,1]
+print(pd.cut(df['Column 2'],bins))
