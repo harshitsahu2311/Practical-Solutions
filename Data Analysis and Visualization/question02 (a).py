@@ -12,7 +12,7 @@ array_column = random.randint (2,100)
 random_array = np.random.randint(1,100,size=(array_row,array_column))
 
 # COMPUTING MEAN, STANDARD DEVIATION AND VARIANCE
-mean = np.mean(random_array, axis = 1)
+# mean = np.mean(random_array, axis = 1)
 mean = np.mean(random_array, axis=1)
 std_dev = np.std(random_array, axis=1)
 variance = np.var(random_array, axis=1)
