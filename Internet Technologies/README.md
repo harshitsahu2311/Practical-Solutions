@@ -1,4 +1,4 @@
-### Internet Technologies
+# Internet Technologies
 
 1. Display your system's IP Address, Subnet mask using `ipconfig`, and find out the network address and the maximum number of systems possible on your network and range of IP addresses available to these systems.
 
