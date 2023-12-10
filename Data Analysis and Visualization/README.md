@@ -73,7 +73,18 @@ From the given dictionary of lists create the following list of dictionaries:
 
 8. Consider the following data frame containing a family name, gender of the family member and her/his monthly income in each record.
    Name Gender MonthlyIncome (Rs.)
-   [Dataframe content]
+|   | Name  | Gender | MonthlyIncome (Rs.) |
+|---|-------|--------|---------------------|
+| 0 | Shah  | Male   | 114000.00           |
+| 1 | Vats  | Male   | 65000.00            |
+| 2 | Vats  | Female | 43150.00            |
+| 3 | Kumar | Female | 69500.00            |
+| 4 | Vats  | Female | 155000.00           |
+| 5 | Kumar | Male   | 103000.00           |
+| 6 | Shah  | Male   | 55000.00            |
+| 7 | Shah  | Female | 112400.00           |
+| 8 | Kumar | Female | 81030.00            |
+| 9 | Vats  | Male   | 71900.00            |
 
    Write a program in Python using Pandas to perform the following:
    a. Calculate and display familywise gross monthly income.
