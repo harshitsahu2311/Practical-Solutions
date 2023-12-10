@@ -47,6 +47,7 @@ From the given dictionary of lists create the following list of dictionaries:
 
 7. Consider a data frame containing data about students i.e. name, gender and passing division:
    Name Birth_Month Gender Pass_Division
+   
 |   | Name          | Birth_Month | Gender | Pass_Division |
 |---|---------------|-------------|--------|---------------|
 | 0 | Mudit Chauhan | December    | M      | III           |
