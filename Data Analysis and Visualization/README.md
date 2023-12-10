@@ -72,7 +72,7 @@ From the given dictionary of lists create the following list of dictionaries:
    b. Sort this data frame on the “Birth Month” column (i.e. January to December). Hint: Convert Month to Categorical.
 
 8. Consider the following data frame containing a family name, gender of the family member and her/his monthly income in each record.
-   Name Gender MonthlyIncome (Rs.)
+   
 |   | Name  | Gender | MonthlyIncome (Rs.) |
 |---|-------|--------|---------------------|
 | 0 | Shah  | Male   | 114000.00           |
