@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pet Information</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    form {
+      width: 300px;
+      margin: 0 auto;
+    }
+    label, input, textarea {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input[type="submit"] {
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <form id="petForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required>
+    
+    <label for="weight">Weight (lbs):</label>
+    <input type="number" id="weight" name="weight" required>
+    
+    <label for="type">Type:</label>
+    <input type="text" id="type" name="type" required>
+    
+    <label for="likes">Likes Most:</label>
+    <textarea id="likes" name="likes" rows="4" required></textarea>
+    
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    document.getElementById('petForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const age = parseInt(document.getElementById('age').value);
+      const weight = parseFloat(document.getElementById('weight').value);
+      const type = document.getElementById('type').value;
+      const likes = document.getElementById('likes').value;
+
+      const pet = {
+        name: name,
+        age: age,
+        weight: weight,
+        type: type,
+        likes: likes
+      };
+
+      let pets = localStorage.getItem('pets');
+      if (pets) {
+        pets = JSON.parse(pets);
+        pets.push(pet);
+      } else {
+        pets = [pet];
+      }
+
+      localStorage.setItem('pets', JSON.stringify(pets));
+      console.log('Pet Object:', pet);
+      console.log('Appended to Local Storage:', pets);
+    });
+  </script>
+</body>
+</html>

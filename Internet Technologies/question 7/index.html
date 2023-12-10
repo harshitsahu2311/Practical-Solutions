@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pets Information</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 20px;
+    }
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      width: 80%;
+    }
+    th, td {
+      border: 1px solid #dddddd;
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h2>Pets Information</h2>
+  <table id="petsTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Weight</th>
+        <th>Type</th>
+        <th>Likes</th>
+      </tr>
+    </thead>
+    <tbody id="petsData">
+      <!-- Data will be populated here -->
+    </tbody>
+  </table>
+
+  <script>
+    function displayPetsFromStorage() {
+      const petsData = document.getElementById('petsData');
+      const pets = JSON.parse(localStorage.getItem('pets'));
+
+      if (pets) {
+        pets.forEach(pet => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${pet.name}</td>
+            <td>${pet.age}</td>
+            <td>${pet.weight}</td>
+            <td>${pet.type}</td>
+            <td>${pet.likes}</td>
+          `;
+          petsData.appendChild(row);
+        });
+      } else {
+        const row = document.createElement('tr');
+        row.innerHTML = `<td colspan="5">No pet data found!</td>`;
+        petsData.appendChild(row);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', displayPetsFromStorage);
+  </script>
+</body>
+</html>

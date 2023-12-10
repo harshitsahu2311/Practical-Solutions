@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>B.Sc. Hons CS Course Details</title>
+</head>
+<body>
+  <h1>B.Sc. Hons Computer Science Course</h1>
+  
+  <h2>Course Details</h2>
+  <ul>
+    <li><strong>Fee:</strong> Rs. 33,000 per year</li>
+    <li><strong>Eligibility Criteria:</strong> Minimum 50% in 10+2 with Science stream</li>
+    <li><strong>Papers:</strong>
+      <ul>
+        <li>Introduction to Programming (Credits: 3)</li>
+        <li>Data Structures and Algorithms (Credits: 4)</li>
+        <li>Database Management Systems (Credits: 3)</li>
+        <li>Computer Networks (Credits: 4)</li>
+        <li>Software Engineering (Credits: 3)</li>
+        <!-- Add more papers -->
+      </ul>
+    </li>
+    <li><strong>Future Possibilities:</strong> Opportunities in software development, data analysis, cybersecurity, etc.</li>
+  </ul>
+
+  <button id="styleButton">Style Page</button>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $('#styleButton').on('click', function() {
+      // Redesign the page using jQuery for styling
+      $('body').css({
+        'font-family': 'Arial, sans-serif',
+        'background-color': '#f4f4f4',
+        'padding': '20px',
+        'text-align': 'center'
+      });
+
+      $('h1').css({
+        'color': '#333',
+        'font-size': '36px',
+        'margin-bottom': '20px'
+      });
+
+      $('h2').css({
+        'color': '#555',
+        'font-size': '24px',
+        'margin-top': '30px',
+        'margin-bottom': '10px'
+      });
+
+      $('ul').css({
+        'list-style-type': 'none',
+        'padding-left': '0'
+      });
+
+      $('li').css({
+        'margin-bottom': '8px'
+      });
+
+      $('#styleButton').hide();
+    });
+  </script>
+</body>
+</html>

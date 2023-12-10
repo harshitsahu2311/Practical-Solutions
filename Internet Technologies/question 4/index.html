@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiplication Tables</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .table-row {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="table-container"></div>
+
+  <script>
+    let currentMultiplier = 2;
+    let currentMultiplierIndex = 1;
+    let currentFontSize = 16;
+
+    function displayTable() {
+      const tableContainer = document.getElementById('table-container');
+      if (currentMultiplierIndex <= 10) {
+        const row = document.createElement('div');
+        row.classList.add('table-row');
+        row.style.fontSize = currentFontSize + 'px';
+        row.textContent = `${currentMultiplier} x ${currentMultiplierIndex} = ${currentMultiplier * currentMultiplierIndex}`;
+        row.style.color = getRandomColor();
+        tableContainer.appendChild(row);
+        currentMultiplierIndex++;
+        if (currentMultiplierIndex > 10) {
+          currentMultiplier++;
+          currentMultiplierIndex = 1;
+          currentFontSize += 2;
+        }
+      }
+    }
+
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    const intervalId = setInterval(displayTable, 5000);
+
+    setTimeout(() => {
+      clearInterval(intervalId);
+    }, 5000 * 10 + 1000); // Stops after 100 rows (10 multiplications for each number)
+  </script>
+</body>
+</html>

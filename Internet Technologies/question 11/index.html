@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SignIn & SignUp</title>
+</head>
+<body>
+  <h1>SignIn</h1>
+  <form action="/signin" method="POST">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+    <input type="submit" value="SignIn">
+  </form>
+
+  <h1>SignUp</h1>
+  <form action="/signup" method="POST">
+    <label for="newUsername">New Username:</label>
+    <input type="text" id="newUsername" name="newUsername" required><br><br>
+    <label for="newPassword">New Password:</label>
+    <input type="password" id="newPassword" name="newPassword" required><br><br>
+    <input type="submit" value="SignUp">
+  </form>
+</body>
+</html>
